@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>YT Clips Playlist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap" rel="stylesheet">
+
+
+    <style>
+        
+        body.dark {
+            background: #181818;
+        }
+
+        body.dark .site-head-bg{
+            background: linear-gradient(180deg,#181818f2 44%,#18181875 68%,hsla(0,0%,100%,0));
+        }
+
+
+
+        body {
+            margin: 0;
+            letter-spacing: .5px;
+            background: #f8f8f8;
+            font-family: "Montserrat","Roboto",Helvetica,Arial,serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.45;
+            color: #626262;
+        }
+
+       
+
+        .content-container {
+            margin: auto;
+            padding: 1.8rem 2.2rem 0;
+            margin-top: 5rem;
+            min-height: calc(100vh - 9.75rem);
+            width: 100%;
+            -webkit-animation: 0.3s scaleUp ease-in;
+            -o-animation: 0.3s scaleUp ease-in;
+            animation: 0.3s scaleUp ease-in;
+        }
+
+
+            .content-container.marginLeft, .site-head.marginLeft {
+                /*margin-left: 80px;*/
+                width: calc(100% - 4.4rem - 80px);
+            }
+
+            .content-container.content-shrink, .site-head.content-shrink {
+                margin-left: 260px;
+                width: calc(100% - 4.4rem - 260px);
+            }
+
+
+
+        .card-box-heading {
+            margin: 0px 8px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e4e4e4;
+            font-weight: 500;
+            letter-spacing: .05rem;
+            font-size: 1rem;
+            color: #2c2c2c;
+            padding: 1.5rem 1.5rem 1rem;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-radius: calc(.5rem - 1px) calc(.5rem - 1px) 0 0;
+        }
+
+        .card-box-body {
+            padding: 22px;
+        }
+
+
+        #NavPanelExpandOverlayBG.active {
+            display: none;
+            background: #734c404d;
+            /* #ff57224d, rgba(0,0,0,.5) */
+            transition: all .4s cubic-bezier(.25,.8,.25,1) !important;
+        }
+
+        #side-nav-head-extra .close-expand:hover {
+            color: #565656;
+        }
+
+        #side-nav-head-extra .close-expand {
+            color: #c3c3c3;
+            transition: all .35s ease 0s !important;
+        }
+
+
+        @media (min-width: 768px) {
+            @keyframes scaleUp {
+                0% {
+                    opacity: 0;
+                    padding-top: 54px;
+                    -webkit-transform: scale(0.95);
+                    -ms-transform: scale(0.95);
+                    -o-transform: scale(0.95);
+                    transform: scale(0.95);
+                }
+
+                100% {
+                    opacity: 1;
+                    padding-top: 26px;
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            @-webkit-keyframes scaleUp {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale(0.95);
+                    -ms-transform: scale(0.95);
+                    -o-transform: scale(0.95);
+                    transform: scale(0.95);
+                }
+
+                100% {
+                    opacity: 1;
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes scaleUp {
+                0% {
+                    opacity: 0;
+                    padding-top: 54px;
+                    -webkit-transform: scale(0.95);
+                    -ms-transform: scale(0.95);
+                    -o-transform: scale(0.95);
+                    transform: scale(0.95);
+                }
+
+                100% {
+                    opacity: 1;
+                    padding-top: 26px;
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            @-webkit-keyframes scaleUp2 {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale(0.95);
+                    -ms-transform: scale(0.95);
+                    -o-transform: scale(0.95);
+                    transform: scale(0.95);
+                    transition: all 3s ease;
+                }
+
+                100% {
+                    opacity: 1;
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    transform: scale(1);
+                    transition: all 3s ease;
+                }
+            }
+
+            #side-nav-head-extra .fix-expand {
+                display: inline-flex;
+            }
+
+            #side-nav-head-extra .close-expand {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .menu-side-left {
+                width: 0px !important;
+            }
+
+            .content-container.marginLeft, .site-head.marginLeft {
+                margin-left: 0px;
+                width: calc(100% - 4.4rem - 0px);
+            }
+
+            .site-head-navbar {
+                width: calc(100% - 4.4rem) !important;
+            }
+
+            #side-nav-head-extra .fix-expand {
+                display: none;
+            }
+
+            #side-nav-head-extra .close-expand {
+                display: inline-flex;
+            }
+
+
+            .menu-side-left.NavPanelExpand {
+                width: 260px !important;
+                transition: all .4s cubic-bezier(.25,.8,.25,1) !important;
+            }
+
+            #NavPanelExpandOverlayBG.active {
+                display: block;
+            }
+        }
+
+
+
+        @media only screen and (max-width: 580px) {
+            .site-head.marginLeft {
+                width: 100% !important;
+            }
+
+            .site-head-navbar {
+                margin: 0 !important;
+                width: 100% !important;
+            }
+
+            .content-container.marginLeft {
+                width: calc(100% - 1.6rem - 0px) !important;
+            }
+
+            .content-container {
+                padding: 1.8rem .8rem 0 !important;
+            }
+
+            .rowContainer {
+                margin-right: -12px !important;
+                margin-left: -12px !important;
+            }
+        }
+
+
+
+        @media only screen and (max-width: 490px) {
+            #top-nav-left-group1 {
+                display: none;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            .rowContainer .col-2 {
+                flex: 0 0 50%;
+                max-width: calc(50% - 28px);
+            }
+
+            .rowContainer .col-4 {
+                flex: 0 0 25%;
+                max-width: calc(25% - 28px);
+            }
+
+            .rowContainer .col-3 {
+                flex: 0 0 33.33333%;
+                max-width: calc(33.33333% - 28px);
+            }
+
+            .rowContainer .col-1 {
+                flex: 0 0 100%;
+                max-width: calc(100% - 28px);
+            }
+        }
+
+        @media only screen and (max-width: 991px) {
+            .rowContainer{
+                width:100%;
+            }
+        }
+
+
+            .site-head-bg {
+                padding-top: 2rem;
+                background: linear-gradient(180deg,hsla(0,0%,97.3%,.95) 44%,hsla(0,0%,97.3%,.46) 68%,hsla(0,0%,100%,0));
+                display: block;
+                width: 100%;
+                height: 72px;
+                position: fixed;
+                top: 0;
+                z-index: 11;
+            }
+
+            .site-head-navbar {
+                box-shadow: 0 4px 20px 0 rgba(0,0,0,.05);
+                margin: 1rem 2.2rem 0;
+                border-radius: .5rem;
+                background: #fff;
+                position: fixed;
+                top: 0;
+                /*width: calc(100% - 4.4rem - 80px);*/
+                width: calc(100% - 4.4rem);
+                z-index: 11;
+                min-height: 4rem;
+                transition: all .3s ease;
+            }
+
+            .site-head.content-shrink .site-head-navbar {
+                width: calc(100% - 4.4rem - 260px);
+            }
+
+            .site-head-nav-warp {
+                padding-left: 1rem;
+                margin-left: 0;
+                position: relative;
+                transition: all .3s ease;
+                backface-visibility: hidden;
+                min-height: calc(100% - 3.6rem);
+            }
+
+            .site-head-nav-container {
+                padding-left: 1rem;
+                margin-left: 0;
+                background: inherit;
+                transition: all .3s ease;
+            }
+
+            .site-head-nav-left {
+                margin-right: auto !important;
+                float: left !important;
+                align-items: center !important;
+                display: flex !important;
+                width: calc(100% - 140px);
+                max-width:940px;
+            }
+
+            .site-head-nav-right {
+                margin-right: auto !important;
+                float: right !important;
+                align-items: center !important;
+                display: flex !important;
+            }
+
+
+                .site-head-nav-left .top-nav-item, .site-head-nav-right .top-nav-item {
+                    flex-direction: row;
+                    padding-left: 0;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    display: inline-flex;
+                    line-height: .5;
+                    margin-right: auto !important;
+                }
+
+
+            .top-nav-item .link {
+                padding: 1.4rem .5rem 1.35rem;
+                color: #626262;
+                background-color: transparent;
+            }
+
+            .top-nav-item:hover .link {
+                color: #ff0000;
+            }
+
+            .top-nav-item {
+                position: relative;
+            }
+
+                .top-nav-item .link .user-nm {
+                    float: left;
+                    margin-right: .8rem;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    display: flex !important;
+                }
+
+                    .top-nav-item .link .user-nm .uname {
+                        margin-left: .2rem;
+                        margin-bottom: .435rem;
+                        display: inline-block;
+                        line-height: 1;
+                        font-weight: 600;
+                        max-width: 140px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .top-nav-item .link .user-nm .Upos {
+                        font-size: smaller;
+                        max-width: 140px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        padding: 6px 0;
+                        margin: -6px 0;
+                    }
+
+                .top-nav-item .link .user-img img {
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+                    border-radius: 1.5rem;
+                    vertical-align: middle;
+                    border-style: none;
+                    height: 40px;
+                    width: 40px;
+                }
+
+
+                .top-nav-item.user-pf {
+                    margin-left: 0;
+                    position: relative;
+                    cursor: pointer;
+                }
+
+                    .top-nav-item.user-pf a {
+                        padding: .7rem 1.23rem;
+                        display: flex;
+                        align-items: center;
+                        color: #626262 !important;
+                    }
+
+                .top-nav-item.user-pf {
+                    margin-left: 0;
+                    position: relative;
+                }
+
+
+
+            .notification-bell a {
+                padding: 1.6rem .2rem 1.35rem .8rem !important;
+                position: relative !important;
+            }
+
+                .notification-bell a .badge-unread {
+                    right: -7px;
+                    position: absolute;
+                    top: 12px;
+                    padding: .42em .6em .25rem;
+                    background-color: #ff9f43; /*#7367f0;*/
+                    text-align: center;
+                    border-radius: 10rem;
+                    font-weight: 400;
+                    display: inline-block;
+                    font-size: 80%;
+                    line-height: 1;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    color: #fff;
+                }
+
+                .notification-bell a .badge-unread {
+                    right: -7px;
+                    position: absolute;
+                    top: 12px;
+                    padding: .42em .6em .25rem;
+                    background-color: #ff9f43; /*#7367f0;*/
+                    text-align: center;
+                    border-radius: 10rem;
+                    color: #fff;
+                    font-weight: 400;
+                    display: inline-block;
+                    font-size: 80%;
+                    line-height: 1;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                }
+
+            .top-nav-item .dropdown-menu:before {
+                transform: rotate(45deg) translate(-7px);
+                border-left: 1px solid rgba(0,0,0,.1);
+                background: #fff;
+                border-top: 1px solid rgba(0,0,0,.1);
+                right: .6rem;
+                left: auto;
+                content: "";
+                position: absolute;
+                top: -1px;
+                width: .75rem;
+                height: .75rem;
+                display: block;
+                z-index: 10;
+                box-sizing: border-box;
+            }
+
+            .top-nav-item .dropdown-menu {
+                position: absolute;
+                will-change: transform;
+                top: 0px;
+                right: 26px;
+                left: -12px !important;
+                padding: .5rem;
+                margin-top: -4px;
+                min-width: 10rem;
+                transform: translate3d(14px, 60px, 0px);
+                border: 1px solid rgba(0,0,0,.05);
+                border-radius: 5px;
+                box-shadow: 0 5px 25px rgba(0,0,0,.1);
+                margin: .5rem 0 0;
+                background-color: #fff;
+                background-clip: padding-box;
+                text-align: left;
+                opacity: 1;
+                display: none;
+                float: none;
+                font-size: .9375rem;
+                color: #626262;
+                list-style: none;
+                z-index: 24;
+            }
+
+            .hiddenOverlay {
+                position: fixed;
+                z-index: 22;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: transparent;
+                display: none;
+            }
+
+
+            .dropdown-menu .dropdown-item .text {
+                margin-left: .5rem !important;
+            }
+
+            .dropdown-menu .dropdown-item:hover {
+                background: #f8f8f8;
+            }
+
+            .dropdown-menu .divider {
+                height: 0;
+                overflow: hidden;
+                margin: .5rem 0;
+                border-top: 1px solid rgba(0,0,0,.08);
+            }
+
+
+            .top-nav-item .tooltip {
+                position: absolute;
+                white-space: nowrap;
+                will-change: transform;
+                top: 1.6px;
+                padding: .68rem .9rem;
+                margin-top: -4px;
+                transform: translate3d(14px, 60px, 0px);
+                border: 1px solid rgba(0,0,0,.05);
+                border-radius: 5px;
+                box-shadow: 0 5px 25px rgba(0,0,0,.1);
+                margin: .5rem 0 0;
+                background-color: #555;
+                background-clip: padding-box;
+                text-align: left;
+                opacity: 1;
+                display: none;
+                float: none;
+                font-size: .845rem;
+                color: #f8f8f8;
+                list-style: none;
+                z-index: 24;
+            }
+
+            .top-nav-item:hover .tooltip {
+                display: block;
+            }
+
+            .top-nav-item .tooltip:before {
+                transform: rotate(45deg) translate(-7px);
+                border-left: 1px solid rgba(0,0,0,.1);
+                background: #555;
+                border-top: 1px solid rgba(0,0,0,.1);
+                right: calc(50% - .75rem);
+                content: "";
+                position: absolute;
+                top: 0px;
+                margin: auto;
+                width: .55rem;
+                height: .55rem;
+                display: block;
+                z-index: 10;
+                box-sizing: border-box;
+            }
+
+
+            .rowContainer {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -14px;
+                margin-left: -14px;
+            }
+
+            #MainContainer > .PageContainer {
+                -webkit-animation: 0.3s scaleUp2 ease-in;
+                -o-animation: 0.3s scaleUp2 ease-in;
+                animation: 0.3s scaleUp2 ease-in;
+            }
+
+            .rowContainer .col-2, .rowContainer .col-4, .rowContainer .col-3, .rowContainer .col-1 {
+                margin: 0 14px;
+                position: relative;
+                width: 100%;
+            }
+
+
+            .rowCard {
+                margin-bottom: 2.2rem;
+                border: none;
+                border-radius: .5rem;
+                box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
+                height: calc(100% - 2.2rem);
+                transition: all .3s ease-in-out;
+                background-color: #fff;
+                background-clip: border-box;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+                .rowCard.bgImgCom {
+                    color: #fff;
+                    background: #4c4c4c;
+                    background-image: url(https://images.unsplash.com/photo-1593642634443-44adaa06623a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80);
+                    background-blend-mode: soft-light;
+                    background-size: cover;
+                    text-align: center;
+                    min-height: 300px;
+                }
+
+            .card-heading {
+                font-weight: 500;
+                letter-spacing: .05rem;
+                font-size: 1.32rem;
+                color: #2c2c2c;
+                border-bottom: none;
+                padding: 1.5rem 1.5rem 0;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                border-radius: calc(.5rem - 1px) calc(.5rem - 1px) 0 0;
+            }
+
+            .menu-side-left {
+                box-shadow: 0 0 15px 0 rgba(0,0,0,.05);
+                background: #fff;
+                position: fixed;
+                z-index: 1031;
+                display: table-cell;
+                height: 100%;
+                overflow: hidden;
+                width: 0px; /*80px*/
+                transition: all .4s cubic-bezier(.25,.8,.25,1);
+                top: 0;
+                left: 0;
+            }
+
+
+                .menu-side-left.NavPanelExpand, .menu-side-left:hover {
+                    width: 260px;
+                    transition: all .4s cubic-bezier(.25,.8,.25,1);
+                }
+
+            .side-nav-head {
+                padding: .35rem 1rem .3rem 1.5rem;
+                height: 3.4rem;
+                position: relative;
+                transition: all .3s ease;
+            }
+
+
+
+                .side-nav-head .site-Logo a {
+                    margin-top: 1rem;
+                    display: inline-flex;
+                    align-items: center;
+                    background-color: transparent;
+                    font-size: 2rem;
+                    line-height: inherit;
+                    white-space: nowrap;
+                    color: #7367f0;
+                    text-decoration: none;
+                    min-width: calc(100% - 40px);
+                }
+
+                    .side-nav-head .site-Logo a .logo-icon {
+                        /*background: url(./icon.png) no-repeat;
+            background-position: -65px -54px;*/
+                        height: 34px;
+                        width: 35px;
+                    }
+
+                    .side-nav-head .site-Logo a .logo-text {
+                        color: #7367f0;
+                        padding-left: 1.4rem;
+                        font-weight: 600;
+                        letter-spacing: .01rem;
+                        font-size: 1.57rem;
+                        margin: 0 !important;
+                        line-height: 1.2;
+                    }
+
+
+            #side-nav-head-extra span {
+                padding: 1.41rem 0;
+                vertical-align: super;
+                cursor: pointer;
+                color: #d6d6d6;
+            }
+
+            #side-nav-head-extra {
+                display: none;
+            }
+
+            .menu-side-left.NavPanelExpand #side-nav-head-extra, .menu-side-left:hover #side-nav-head-extra {
+                display: inline-block;
+            }
+
+
+            .noSelect {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-user-drag: none;
+            }
+
+            .menu-side-left.NavPanelExpand .side-nav-head .site-Logo #side-nav-head-extra .fix-expand {
+                color: #7367f0
+            }
+
+            .side-nav-content {
+                height: calc(100% - 6rem) !important;
+                position: relative;
+                transition: all .25s ease;
+                overflow-y: scroll;
+            }
+
+
+
+            .side-nav-content-UL {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                /*font-size: 1.1rem;*/
+                font-size: 0.98rem;
+                font-weight: 400;
+                overflow-y: hidden;
+                touch-action: pan-y;
+            }
+
+                .side-nav-content-UL > li:first-child {
+                    margin-top: .5rem;
+                }
+
+
+                .side-nav-content-UL > li {
+                    padding: 0 15px;
+                    position: relative;
+                    white-space: nowrap;
+                }
+
+                .side-nav-content-UL li:not(.nested):hover > a {
+                    padding-left: 25px;
+                    transition: padding .35s ease 0s !important;
+                }
+
+                .side-nav-content-UL li.nested:hover > a:hover {
+                    padding-left: 25px;
+                    transition: padding .35s ease 0s !important;
+                }
+
+                .side-nav-content-UL > li.nested.active > a {
+                    background: #f5f5f5;
+                    border-radius: 6px;
+                    margin-bottom: 7px;
+                }
+
+                .side-nav-content-UL > li.nested.active > a {
+                    color: #494949;
+                    transition: transform .25s ease 0s,-webkit-transform .25s ease 0s;
+                }
+
+                .side-nav-content-UL > li.nested li.active.focus {
+                    background: linear-gradient(118deg,#7367f0,rgba(115,103,240,.7));
+                    box-shadow: 0 0 10px 1px rgba(115,103,240,.7) !important;
+                    border-radius: 4px;
+                    color: #fff;
+                }
+
+            .menu-side-left.NavPanelExpand .side-nav-content-UL > li.active.focus a, .menu-side-left:hover .side-nav-content-UL > li.active.focus a {
+                background: linear-gradient(118deg,#7367f0,rgba(115,103,240,.7));
+                box-shadow: 0 0 10px 1px rgba(115,103,240,.7) !important;
+                border-radius: 4px;
+                color: #fff !important;
+            }
+
+            .side-nav-content-UL > li.active.focus a {
+                color: #494949 !important;
+                background: #f5f5f5;
+                border-radius: 6px;
+                margin-bottom: 7px;
+            }
+
+            .side-nav-content-UL li.active.focus > a {
+                color: #fff;
+            }
+
+
+
+            .side-nav-content-UL li a {
+                color: #565656;
+                padding: 10px 15px;
+                line-height: 1.45;
+                transition: padding .35s ease 0s !important;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                outline: none;
+                justify-content: space-between !important;
+                display: flex !important;
+            }
+
+            .ul-list-item {
+                width: 170px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+                .ul-list-item .item-icon {
+                    margin-right: 1rem;
+                    position: relative;
+                    top: -1px;
+                    vertical-align: middle;
+                    font-size: 22px;
+                }
+
+
+            .expand-icon-arrow {
+                font-size: 0.96rem;
+                right: 22px;
+                position: absolute;
+                top: 15px;
+                transition: all .25s ease;
+                vertical-align: middle;
+                display: none;
+            }
+
+            .side-nav-content-UL > li.nested.active > a .expand-icon-arrow {
+                transform: rotate(90deg);
+            }
+
+            .menu-side-left.NavPanelExpand .expand-icon-arrow, .menu-side-left:hover .expand-icon-arrow {
+                display: block;
+            }
+
+            .side-nav-sub-menu {
+                display: none;
+            }
+
+            .menu-side-left.NavPanelExpand li.nested.active .side-nav-sub-menu, .menu-side-left:hover li.nested.active .side-nav-sub-menu {
+                display: block;
+            }
+
+            .side-nav-sub-menu {
+                padding: 7px;
+                margin: -7px -7px 0;
+                transition: height .25s ease;
+                background: #fff;
+                list-style: none;
+            }
+
+                .side-nav-sub-menu li {
+                    background: transparent;
+                    color: #626262;
+                }
+
+                    .side-nav-sub-menu li a {
+                        padding: 10px 15px 10px 20px;
+                    }
+
+            .sub-list-item {
+                width: 180px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+                .sub-list-item .item-icon {
+                    margin-right: 1.36rem;
+                    font-size: 12px;
+                    position: relative;
+                    top: -1px;
+                    vertical-align: middle;
+                }
+
+            .side-nav-subGroup-title {
+                margin: 2rem 0 .8rem 2.2rem;
+                padding: 0px !important;
+                color: #999;
+                line-height: 1.5;
+                letter-spacing: .01rem;
+                font-weight: 500;
+                font-size: .9rem;
+                text-transform: uppercase;
+                display: none;
+            }
+
+            .menu-side-left.NavPanelExpand .side-nav-subGroup-title, .menu-side-left:hover .side-nav-subGroup-title {
+                display: block;
+            }
+
+
+
+            a {
+                text-decoration: none;
+            }
+
+
+            .btn-shadow {
+                box-shadow: 0 2px 8px 0 rgba(0,0,0,.14) !important;
+                border-radius: .5rem !important;
+                color: #626262;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+                padding: .7rem 1rem;
+                border-radius: .4285rem;
+                font-size: .98rem;
+                line-height: 1;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                text-transform: none;
+                outline: none;
+                margin: 0.6rem;
+            }
+
+            .btn-outline {
+                padding-top: calc(.74rem - 1px);
+                padding-bottom: calc(.74rem - 1px);
+                cursor: pointer;
+                border: 1px solid #7367f0;
+                background-color: transparent;
+                text-align: center;
+                padding: .8rem 1.5rem;
+                border-radius: .4285rem;
+                margin: 0;
+                color: #7367f0;
+                display: inline-block;
+                font-weight: 400;
+                vertical-align: middle;
+                user-select: none;
+                font-size: .98rem;
+                line-height: 1;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                text-transform: none;
+                overflow: visible;
+                margin-top: 1rem !important;
+                outline: none;
+            }
+
+                .btn-outline:hover, .btn-shadow:hover {
+                    background-color: rgba(115,103,240,.08);
+                    color: #7367f0;
+                    border-color: #7367f0;
+                }
+
+                .btn-outline.regular, .btn-outline.regular:hover {
+                    background-color: #7367f0;
+                    border-color: #7367f0;
+                    color: #fff !important;
+                }
+
+                .btn-outline:active, .btn-shadow:active {
+                    background-color: #7367f0;
+                    border-color: #7367f0;
+                    color: #fff !important;
+                }
+
+                .btn-outline.red {
+                    border: 1px solid #ea5455;
+                    color: #ea5455;
+                    background-color: transparent;
+                }
+
+                    .btn-outline.red:hover {
+                        background-color: rgba(234,84,85,.08);
+                    }
+
+                    .btn-outline.red:active {
+                        background-color: #ea5455;
+                        border-color: #ea5455;
+                        color: #fff !important;
+                    }
+
+
+                .btn-outline.green {
+                    border: 1px solid #28c76f;
+                    color: #28c76f;
+                    background-color: transparent;
+                }
+
+                    .btn-outline.green:hover {
+                        background-color: rgba(40,199,111,.08);
+                    }
+
+                    .btn-outline.green:active {
+                        background-color: #28c76f;
+                        color: #fff !important;
+                    }
+
+            svg {
+                overflow: hidden;
+                vertical-align: middle;
+            }
+
+
+
+            /* ScrollBar */
+
+            .scrollbar {
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }
+
+                .scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+
+            /* on hover left menu ScrollBar show */
+
+            /*	Firefox
+        .menu-side-left:hover .scrollbar {
+          -ms-overflow-style: scrollbar;  /* IE and Edge
+          scrollbar-width: thin;
+          scrollbar-color: #888 #f1f1f1;
+        }
+        .menu-side-left:hover .scrollbar:hover {
+          scrollbar-color: #555 #f1f1f1;
+        }
+
+        /* width
+        .menu-side-left:hover .scrollbar::-webkit-scrollbar{
+          width: 4px;
+          display: block;
+        }
+
+        /* Track
+        .menu-side-left:hover .scrollbar::-webkit-scrollbar-track{
+          background: #f1f1f1;
+        }
+
+        /* Handle
+        .menu-side-left:hover .scrollbar::-webkit-scrollbar-thumb{
+          background: #888;
+        }
+
+        /* Handle on hover
+        .menu-side-left:hover .scrollbar::-webkit-scrollbar-thumb:hover{
+          background: #555;
+        }
+        */
+
+        .searchboxBar {
+    background: #f2f2f2;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    z-index: 3;
+    margin: 0 18px;
+    height: 40px;
+    min-width: 220px;
+    width: 100%;
+    padding: 0px;
+}
+.searchboxBtn {
+    color: #9aa0a6 !important;
+    padding: .4rem .8rem !important;
+    padding-top: .55rem !important;
+}
+.searchboxBtn:hover {
+    color: #4285f4 !important;
+}
+
+.searchboxBar .searchText {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, .87);
+    word-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex: 100%;
+    -webkit-tap-highlight-color: transparent;
+    padding-right: .8rem;
+    height: 40px;
+    font-size: 16px;
+    font: 16px arial, sans-serif;
+    line-height: 34px;
+}
+
+
+
+
+
+
+       
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <header id="site-head" class="site-head  marginLeft noSelect">
+
+        <div class="site-head-bg"></div>
+
+        <nav class="site-head-navbar">
+            <div class="site-head-nav-warp">
+                <div class="site-head-nav-container">
+
+
+                    <div class="site-head-nav-left"> 
+
+                        <div id="top-nav-sideMenu-trigger" class="top-nav-item">
+                            <a href="#" class="link" onclick='LeftNavPanelExpand();'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ficon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            </a>
+                        </div>
+
+
+                        <div id="top-nav-sideMenu-trigger" class="top-nav-item" style="margin: -12px; margin-left: 20px;">
+                            <div>
+                            <a href="#" class="link">
+                                <img src="./assets/images/logo.png" alt="YT Clips Playlist" style="max-width: 40px;">
+                            </a>
+                            </div>
+                            <div style="margin: 14px 2px; width:160px; vertical-align: middle; font-size: 24px;">Clips Playlist</div>
+                        </div>
+
+                        <!-- <div id="top-nav-left-group1">
+                            <div class="top-nav-item">
+                                <a href="#" class="link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                                </a>
+                                <div class="tooltip" style="left: -36px; width: auto;">To-Do</div>
+                            </div>
+
+                            <div class="top-nav-item">
+                                <a href="#" class="link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </a>
+                                <div class="tooltip" style="left: -32px; width: auto;">Chat</div>
+                            </div>
+
+                            <div class="top-nav-item">
+                                <a href="#" class="link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                </a>
+                                <div class="tooltip" style="left: -45px; width: auto;">Calender</div>
+                            </div>
+
+                            <div class="top-nav-item">
+                                <a href="#" class="link" style="color:#ff9f43 !important" onclick="accountSettingsPg()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                </a>
+                            </div> 
+                        </div>-->
+                        <div class="top-nav-item searchboxBar">
+                            <a class="link searchboxBtn" onclick="console.log('Search')">
+                                <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="21" width="21" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </a>
+                            <input type="text" class="searchText" name="searchSt" onfocusin="expandSearchBar('expand')" onfocusout="expandSearchBar('default')" placeholder="Search">
+                        </div>
+                    </div>
+
+
+                    <div class="site-head-nav-right">
+                        <div class="top-nav-item notification-bell">
+                            <a href="#" class="link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                                <span class="badge-unread"> 5 </span>
+                            </a>
+                        </div>
+
+                        <div id="hiddenOverlayBg-topnav" class="hiddenOverlay" onclick="hideOnClickOutside()"></div>
+                        <div class="top-nav-item user-pf" onclick="showHideOverlayElem('top-nav-dropdown-profile', 'hiddenOverlayBg-topnav')">
+                            <a class="link">
+                                <!-- <div class="user-nm">
+                                    <span class="uname">Sundar Pichai</span>
+                                    <span class="Upos">CEO</span>
+                                </div> -->
+                                <span class="user-img">
+                                    <img src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg" />
+                                </span>
+                            </a>
+
+                            <div class="dropdown-menu" id='top-nav-dropdown-profile'>
+
+                                <a href="#" class="dropdown-item" onclick="accountSettingsPg()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-50"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    <span class="text">Edit Profile</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-50"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                    <span class="text">Chat</span>
+                                </a>
+                                <div class="divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-50"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+                                    <span class="text">Log Out</span>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </nav>
+
+    </header>
+
+
+
+
+
+    <!-- Sider Left -->
+    <div id="NavPanelExpandOverlayBG" class="hiddenOverlay" onclick='LeftNavPanelExpand();'></div>
+
+    <nav id="asideL" class="menu-side-left noSelect">
+
+        <div id="asideLHead" class="side-nav-head ng-scope" style="visibility:hidden">
+
+            <div class='site-Logo'>
+                <a href="#" class="site-logo text-uppercase" onclick="dshHomePg();">
+                    <div class="logo-icon">
+                        <i class="material-icons" style="font-size: 35px;">whatshot</i>
+                    </div>
+                    <h2 class='logo-text'>abonzer</h2>
+                </a>
+
+                <span id='side-nav-head-extra'>
+                    <span class='fix-expand' onclick='LeftNavPanelExpand();'>
+                        <i class="material-icons" style="vertical-align:text-bottom;">notes</i>
+                    </span>
+                    <span class='close-expand' onclick='LeftNavPanelExpand();'>
+                        <i class="material-icons" style="vertical-align:text-bottom;">close</i>
+                    </span>
+                </span>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- Nav Options List Start -->
+        <div class='side-nav-content scrollbar'>
+
+            <ul class="side-nav-content-UL noSelect">
+
+                <li class='focus'>
+                    <a href="#A" onclick="ChangeOpt(this);dshHomePg();">
+                        <div class='ul-list-item'>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="item-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span class="text">Dashboard</span>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="nested">
+                    <a href="#A" onclick="ChangeOpt(this);">
+                        <div class='ul-list-item'>
+                            <i class="material-icons item-icon">perm_identity</i>
+                            <span class="text">Profile</span>
+                        </div>
+                        <i class="material-icons expand-icon-arrow">chevron_right</i>
+                    </a>
+
+                    <ul class="side-nav-sub-menu">
+                        <li class='focus'>
+                            <a href="#" onclick="ChangeOpt(this); datatableUserListPg();">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">List</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class='focus'>
+                            <a href="#" onclick="ChangeOpt(this); profileViewPg();">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">View</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class='focus'>
+                            <a href="#" onclick="ChangeOpt(this); accountSettingsPg();">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">Edit</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nested">
+                    <a href="#A" onclick="ChangeOpt(this);">
+                        <div class='ul-list-item'>
+                            <i class="material-icons item-icon">tune</i>
+                            <span class="text">Credit -Vuexy</span>
+                        </div>
+                        <i class="material-icons expand-icon-arrow">chevron_right</i>
+                    </a>
+
+                    <ul class="side-nav-sub-menu">
+                        <li>
+                            <a href="https://pixinvent.com/demo/vuexy-react-admin-dashboard-template/demo-1/" target="_blank" onclick="ChangeOpt(this);">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">Live Preview</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class=''>
+                            <a href="https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599" target="_blank" onclick="ChangeOpt(this);">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">Buy Template</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="side-nav-subGroup-title"><span>APPS</span></li>
+
+
+                <li class='focus'>
+                    <a href="#A" onclick="ChangeOpt(this);">
+                        <div class='ul-list-item'>
+                            <i class="material-icons item-icon">chat_bubble_outline</i>
+                            <span class="text">Chat</span>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="#A" onclick="ChangeOpt(this); emailAppViewPg();">
+                        <div class='ul-list-item'>
+                            <i class="material-icons item-icon">mail_outline</i>
+                            <span class="text">Email</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class='focus'>
+                    <a href="#A" onclick="ChangeOpt(this);">
+                        <div class='ul-list-item'>
+                            <i class="material-icons item-icon">calendar_today</i>
+                            <span class="text">Calendar</span>
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="nested">
+                    <a href="#A" onclick="ChangeOpt(this);">
+                        <div class='ul-list-item'>
+                            <i class="material-icons item-icon">perm_identity</i>
+                            <span class="text">More Apps</span>
+                        </div>
+                        <i class="material-icons expand-icon-arrow">chevron_right</i>
+                    </a>
+
+                    <ul class="side-nav-sub-menu">
+                        <li class='focus'>
+                            <a href="#" onclick="ChangeOpt(this);">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">App 1</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class='focus'>
+                            <a href="#" onclick="ChangeOpt(this);">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">App 2</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class='focus'>
+                            <a href="#" onclick="ChangeOpt(this);">
+                                <div class='sub-list-item'>
+                                    <i class="material-icons item-icon">radio_button_unchecked</i>
+                                    <span class="text">App 3</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+
+
+    </nav>
+
+
+  
+
+    <div id="MainContainer" class="content-container marginLeft">
+
+        <!-- HTML PAGE LOAD HERE-->
+
+
+    </div>
+
+</body>
+
+<script>
+    // <!-- nav trigger/collapse -->
+    var LeftNavPanelExpandStatus = "NoExpand";
+    var RightNavPanelExpandStatus = "NoExpand";    
+
+    function LeftNavPanelExpand() {        
+        if (LeftNavPanelExpandStatus == "NoExpand") {
+            document.getElementById('asideL').classList.add("NavPanelExpand");
+            document.getElementById('site-head').classList.add("content-shrink");
+            document.getElementById('MainContainer').classList.add("content-shrink");
+            LeftNavPanelExpandStatus = "Expand";
+        } else if (LeftNavPanelExpandStatus == "Expand") {
+            document.getElementById('asideL').classList.remove("NavPanelExpand");
+            document.getElementById('site-head').classList.remove("content-shrink");
+            document.getElementById('MainContainer').classList.remove("content-shrink");
+            LeftNavPanelExpandStatus = "NoExpand";
+        }
+
+        document.getElementById('NavPanelExpandOverlayBG').classList.toggle("active");
+    }
+
+   
+
+    function ChangeOpt(SelectedOpt) {
+
+        var optLI = SelectedOpt.parentNode;
+        var navOptList = optLI.parentNode.querySelectorAll('li');
+        var isActive = 'false';
+
+        if(optLI.classList.contains("active")){        	
+        	isActive = 'true';
+        }
+
+        for (var i = 0; i < navOptList.length; i++) {
+            if (navOptList[i].classList.contains("active")) {
+                navOptList[i].classList.remove("active");
+            } 
+        }
+        
+       if(optLI.classList.contains("nested") && isActive == 'true'){ 
+        	optLI.classList.remove("active");
+        }else{
+        	optLI.classList.add("active");
+        }
+        
+    }
+
+
+
+	var hideOverlayElem;
+	var hideOverlayElem_Bg;
+	
+    function hideOnClickOutside() {
+		hideOverlayElem.style.display = 'none';
+		hideOverlayElem_Bg.style.display = 'none';
+		hideOverlayElem = '';
+		hideOverlayElem_Bg = '';
+    }
+    
+    function showHideOverlayElem(elemID, bgID){    	
+    	hideOverlayElem = document.getElementById(elemID);
+    	hideOverlayElem_Bg = document.getElementById(bgID);
+    	hideOverlayElem.style.display = 'block';
+    	hideOverlayElem_Bg.style.display = 'block';
+    }
+
+    
+
+</script>
+
+</html>
