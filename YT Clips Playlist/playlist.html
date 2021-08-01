@@ -20,8 +20,12 @@
             background: #181818;
         }
 
-        body.dark .site-head-bg{
-            background: linear-gradient(180deg,#181818f2 44%,#18181875 68%,hsla(0,0%,100%,0));
+        body.dark .site-head-bg {
+            background: linear-gradient(180deg, #181818f2 44%, #18181875 68%, hsla(0, 0%, 100%, 0));
+        }
+
+        body.dark .site-head-navbar {
+            background: #2a2a2a;
         }
 
 
@@ -51,10 +55,11 @@
         }
 
 
-            .content-container.marginLeft, .site-head.marginLeft {
-                /*margin-left: 80px;*/
-                width: calc(100% - 4.4rem - 80px);
-            }
+           /* .content-container.marginLeft,
+        .site-head.marginLeft {
+            margin-left: 80px;
+            width: calc(100% - 4.4rem - 80px);
+        } */
 
             .content-container.content-shrink, .site-head.content-shrink {
                 margin-left: 260px;
@@ -282,8 +287,8 @@
         }
 
         @media only screen and (max-width: 991px) {
-            .rowContainer{
-                width:100%;
+            .rowContainer {
+                width: 100%;
             }
         }
 
@@ -498,10 +503,10 @@
                 will-change: transform;
                 top: 0px;
                 right: 26px;
-                left: -12px !important;
+                /*left: -12px !important;*/
                 padding: .5rem;
                 margin-top: -4px;
-                min-width: 10rem;
+                min-width: 11rem;
                 transform: translate3d(14px, 60px, 0px);
                 border: 1px solid rgba(0,0,0,.05);
                 border-radius: 5px;
@@ -1115,14 +1120,43 @@
     line-height: 34px;
 }
 
+.hide {
+            display: none !important;
+        }
 
 
+        .youtube-video-container {
+            float: left;
+            max-width: 869px;
+            width: calc(100% - 300px);
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            border-radius: .5rem;
+        }
 
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+        }
 
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+        }
 
-       
-
-
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: .5rem;
+        }   
     </style>
 </head>
 
@@ -1147,7 +1181,7 @@
                         </div>
 
 
-                        <div id="top-nav-sideMenu-trigger" class="top-nav-item" style="margin: -12px; margin-left: 20px;">
+                        <div class="top-nav-item" style="margin: -12px; margin-left: 20px;">
                             <div>
                             <a href="#" class="link">
                                 <img src="./assets/images/logo.png" alt="YT Clips Playlist" style="max-width: 40px;">
@@ -1204,7 +1238,7 @@
                             </a>
                         </div>
 
-                        <div id="hiddenOverlayBg-topnav" class="hiddenOverlay" onclick="hideOnClickOutside()"></div>
+                        <div class="hiddenOverlay" onclick="hideOnClickOutside()"></div>
                         <div class="top-nav-item user-pf" onclick="showHideOverlayElem('top-nav-dropdown-profile', 'hiddenOverlayBg-topnav')">
                             <a class="link">
                                 <!-- <div class="user-nm">
@@ -1222,9 +1256,26 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-50"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                     <span class="text">Edit Profile</span>
                                 </a>
-                                <a href="#" class="dropdown-item">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-50"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                                    <span class="text">Chat</span>
+                                <a href="#" class="dropdown-item"
+                                    onclick="document.body.classList.toggle('dark'); this.querySelector('span.dark_mode').classList.toggle('hide'); this.querySelector('span.light_mode').classList.toggle('hide'); ">
+                                    <span class='dark_mode'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="mr-50">
+                                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                        </svg>
+                                        <span class="text">Dark theme</span>
+                                    </span>
+                                    <span class='light_mode hide'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="mr-50">
+                                            <circle cx="12" cy="12" r="5" />
+                                            <path
+                                                d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+                                        </svg>
+                                        <span class="text">Light theme</span>
+                                    </span>
                                 </a>
                                 <div class="divider"></div>
                                 <a href="#" class="dropdown-item">
@@ -1447,6 +1498,14 @@
     <div id="MainContainer" class="content-container marginLeft">
 
         <!-- HTML PAGE LOAD HERE-->
+        <div>
+            <div class="youtube-video-container">
+                <div class="video-wrapper">
+                    <iframe width="560" height="349" src="https://www.youtube.com/embed/crqUDl8BPWI" frameborder="0"
+                        allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div>
 
 
     </div>
