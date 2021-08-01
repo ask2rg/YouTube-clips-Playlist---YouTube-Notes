@@ -1157,6 +1157,66 @@
             height: 100%;
             border-radius: .5rem;
         }   
+
+        .site-head-nav-right .search-icon{
+    display: none;
+}
+
+
+
+
+       @media only screen  and (max-width:480px){
+           .searchboxBar{
+               display: none !important;
+           }
+           .site-head-nav-left{
+               width: auto;
+           }
+           .site-head-nav-warp{
+               padding: 0 4px;
+           }
+           .site-head-nav-container{
+               padding: 4px;
+           }
+           .top-nav-item .link{
+               padding: 1.4rem 4px 1.35rem 0;
+           }
+           .logo-main img{
+               max-width: 28px !important;
+           }
+           .logo-main a{
+               margin-top: -12px !important;
+
+           }
+           .site-head-nav-right .search-icon{
+    display: block;
+}
+.top-nav-item.user-pf a{
+    padding: .5rem .2rem;
+    padding-left: .6rem;
+}
+.top-nav-item .link .user-img img{
+    width: 35px;
+    height: 35px;
+}
+#top-nav-sideMenu-trigger{
+margin-left: 5px !important;
+}
+
+
+       }
+
+       @media only screen  and (max-width:760px){
+        .searchboxBar{
+               display: none !important;
+           }
+           .site-head-nav-right .search-icon{
+    display: block;
+}
+.site-head-nav-left{
+               width: auto;
+           }
+       }
     </style>
 </head>
 
@@ -1231,6 +1291,14 @@
 
 
                     <div class="site-head-nav-right">
+                      <div class="top-nav-item search-icon">
+                        <a href="#" class="link">
+                            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="21" width="21" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </a>
+                    </div>
                         <div class="top-nav-item notification-bell">
                             <a href="#" class="link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
@@ -1558,7 +1626,6 @@
         }
         
     }
-
 
 
 	var hideOverlayElem;
