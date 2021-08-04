@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,24 +49,20 @@
             color: #ffffff;
         }
 
-        body.dark .dropdown-menu .dropdown-item:hover,
-        body.dark .dropdown-menu .dropdown-item .text {
+        body.dark .dropdown-menu .dropdown-item:hover {
+            /* rvedit */
             background: rgba(36, 36, 36, 0.877);
         }
 
         body.dark .site-head-nav-right .divider {
-            border-top: 1px solid #7a7c7d;
+            border-top: 1px solid #7a7c7d29;
+            /*rveidt*/
         }
 
         body.dark .site-head-bg {
             background: linear-gradient(180deg, #181818f2 44%, #18181875 68%, hsla(0, 0%, 100%, 0));
         }
 
-
-
-        body.dark .searchboxBar {
-            background-color: #000000;
-        }
 
         body.dark .notification-bell svg {
             color: rgba(255, 0, 0, 1);
@@ -98,7 +94,9 @@
         }
 
         body.dark .searchboxBar {
-            border: 1px solid #615c5c;
+            border: 1px solid #615c5c3d;
+            /*rvedit*/
+            background-color: #0000002b;
         }
 
 
@@ -120,7 +118,7 @@
             padding: 1.8rem 2.2rem 0;
             margin-top: 5rem;
             min-height: calc(100vh - 9.75rem);
-            width: 100%;
+            width: calc(100% - 4.4rem);
             -webkit-animation: 0.3s scaleUp ease-in;
             -o-animation: 0.3s scaleUp ease-in;
             animation: 0.3s scaleUp ease-in;
@@ -1184,6 +1182,8 @@
             min-width: 220px;
             width: 100%;
             padding: 0px;
+            cursor: pointer;
+            /*rvedit*/
         }
 
         .searchboxBtn {
@@ -1310,6 +1310,221 @@
 
         }
 
+
+        .cliplist-container {
+            display: flex;
+            font-family: Roboto, Arial, sans-serif;
+        }
+
+        .youtube-video-list-container {
+            width: 282px;
+            margin-left: 16px;
+        }
+
+        .youtube-video-list-container .ytlist-head {
+            width: 100%;
+            height: 67px;
+            background: #FFFFFF;
+            border: 1px solid #D2D2D2;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .ytlist-head .playlist_title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 12px 14px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.25px;
+            line-height: 20px;
+            color: rgb(3, 3, 3);
+            padding-bottom: 4px;
+        }
+
+        .playlist_status_opt {
+            color: rgb(96, 96, 96);
+            padding: 12px 14px;
+            font-size: 14px;
+            padding-top: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* toggle switch btn css start*/
+        .ToggleSwitchBtn {
+            display: inline-block;
+            width: 3em;
+            height: 1.6em;
+        }
+
+        .ToggleSwitchBtn .tglCheckbox {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .tglKnobs {
+            outline: 0;
+            display: block;
+            width: 3em;
+            height: 1.6em;
+            position: relative;
+            cursor: pointer;
+            background: #eeeeee;
+            border-radius: 1.5em;
+            padding: 1px;
+            box-sizing: border-box;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            border: 1px solid #e8eae9;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            margin-top: -1.4em;
+        }
+
+        .tglKnobs:before {
+            position: relative;
+            display: block;
+            content: "";
+            width: 50%;
+            height: 100%;
+            border-radius: 2em;
+            background: #c4c4c4;
+            -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+
+        }
+
+        .tglCheckbox:checked+.tglKnobs {
+            background-color: #86d993;
+        }
+
+        .tglCheckbox:focus+.tglKnobs {
+            box-shadow: 0 0 1px #00000033;
+        }
+
+        .tglCheckbox:checked+.tglKnobs:before {
+            -webkit-transform: translateX(1.8em);
+            -ms-transform: translateX(1.8em);
+            transform: translateX(1.8em);
+        }
+
+        .tglCheckbox:checked+.tglKnobs:before {
+            content: '';
+            left: -10%;
+            background: #fbfbfb;
+            -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+        }
+
+        /* toggle switch btn end */
+
+
+        .ytlist-body {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 12px;
+        }
+
+        .ytlist-body .ytlist-item {
+            background: #BEFFF7;
+            border: 2px solid #24CEBA;
+            box-sizing: border-box;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 6px;
+        }
+
+        .ytlist-item img{
+            height: 70px;
+            margin: 0 6px;
+            border-radius: 4px;
+        }
+
+        .ytlist-item .clip_title{
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.25px;
+            line-height: 20px;
+            color: rgb(3, 3, 3);
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .ytlist-item .clip_info{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px
+        }
+
+        .ytlist-item .clip_details{
+            width: calc(100% - 150px);
+            font-size: 12px;
+        }
+
+        .ytlist-item .clip_details .clip_source_vid{
+            text-decoration: none;
+            color: #11ABB5;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .ytlist-item .clip_details .clip_source_time{
+                display: block;
+            }
+
+
+        @media only screen and (max-width:340px) {
+            .ytlist-item .clip_details .clip_source_time{
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width:1020px) and (max-width:1268px) {
+            .ytlist-item .clip_details .clip_source_time{
+                display: none;
+            }
+        }
+
+
+
+        @media only screen and (min-width:1240px) {
+            .youtube-video-list-container {
+                width: calc(100% - 885px);
+            }
+
+            .youtube-video-container {
+                min-width: 869px;
+            }
+        }
+
+        @media only screen and (max-width:1020px) {
+            .cliplist-container {
+                flex-direction: column;
+            }
+
+            .youtube-video-container {
+                min-width: 100%;
+            }
+
+            .youtube-video-list-container {
+                margin-left: 0;
+                margin-top: 18px;
+                min-width: 100%;
+
+            }
+
+        }
+
+
         @media only screen and (max-width:760px) {
             .searchboxBar {
                 display: none !important;
@@ -1406,6 +1621,8 @@
                         </div>
                     </div>
 
+                    <div id="hiddenOverlayBg-topnav" class="hiddenOverlay" onclick="hideOnClickOutside()"
+                        style="display: none;"></div>
 
                     <div class="site-head-nav-right">
                         <div class="top-nav-item search-icon">
@@ -1709,17 +1926,47 @@
     <div id="MainContainer" class="content-container marginLeft">
 
         <!-- HTML PAGE LOAD HERE-->
-        <div>
+        <div class="cliplist-container">
             <div class="youtube-video-container">
                 <div class="video-wrapper">
                     <iframe width="560" height="349" src="https://www.youtube.com/embed/crqUDl8BPWI" frameborder="0"
                         allowfullscreen=""></iframe>
                 </div>
             </div>
-            <div>
 
+            <div class="youtube-video-list-container">
+                <div class="ytlist-head">
+                    <div class="playlist_title">Playlist title here so i title go long it hide likedfg sdfr dsrf
+                    </div>
+                    <div class="playlist_status_opt">
+                        <div>video - 2 / 25</div>
 
+                        <label class="ToggleSwitchBtn">
+                            <input type="checkbox" class="tglCheckbox">
+                            <span class="tglKnobs"></span>
+                        </label>
+
+                    </div>
+                </div>
+                <div class="ytlist-body">
+
+                    <div class="ytlist-item">
+                        <div>3</div>                        
+                        <img src="https://i.ytimg.com/vi/M8nlgBQBxxo/maxresdefault.jpg"/>
+                        
+                        <div class="clip_details">
+                            <div class="clip_title">Playlist title here so i title go long it hide likedfg sd</div>
+                            <div class="clip_info">
+                                <div class="clip_source_vid">video</div>
+                                <div class="clip_source_time">2:22:22 - 2:22:22</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
+
 
 </body>
 
